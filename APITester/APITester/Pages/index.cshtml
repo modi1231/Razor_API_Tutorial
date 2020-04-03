@@ -1,0 +1,25 @@
+﻿@page
+@model APITester.indexModel
+@{
+    ViewData["Title"] = "index";
+}
+
+<h1>Hello world</h1>
+<h3>Result: @Model.Message</h3>
+<br />
+<form method="post">
+    URL: <input type="text" style="width:250px;" asp-for="@Model.sUrl" /><br />
+    Controller: <input type="text" style="width:250px;" asp-for="@Model.sController" /><br />
+    <button type="submit">Submit</button>
+</form>
+
+<br />
+<hr />
+<h3>API Post Test</h3>
+<br />
+<form method="post">   
+    URL: <input type="text" style="width:250px;" asp-for="@Model.sUrl" /><br />
+    Controller: <input type="text" style="width:250px;" asp-for="@Model.sController" /><br />
+    Value: <input type="text" style="width:250px;" asp-for="@Model.lValue" /><br />
+    <button type="submit" asp-page-handler="SendValue">Submit</button>
+</form>
